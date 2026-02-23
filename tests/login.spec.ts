@@ -13,6 +13,9 @@ test('Login Logout Test', async ({ page }) => {
     'practice',
     'SuperSecretPassword!'
   );
+  await expect(
+    page.getByText('You logged into a secure area!')
+  ).toBeVisible();
 
   await dashboardPage.logout();
 
